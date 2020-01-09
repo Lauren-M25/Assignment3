@@ -13,6 +13,7 @@
  import javax.swing.*;
  //import java.text.DecimalFormat;
  import java.io.*;
+import java.text.DecimalFormat;
 
 public class CS30SA3FuelEconomyClient {  // begin class
     
@@ -41,7 +42,7 @@ public class CS30SA3FuelEconomyClient {  // begin class
         // parameters for the inited constructor
         // are liters per 100k folowed by the amount of fuel in the tank
         Car car2 = new Car(9, 45);	    
-        //DecimalFormat df1 = new DecimalFormat("##.###");
+        DecimalFormat df1 = new DecimalFormat("##.###");
     
     // the ProgramInfo class has both a default and initialized constructor
     // so you can choose which model you want to employ
@@ -76,14 +77,14 @@ public class CS30SA3FuelEconomyClient {  // begin class
 
         System.out.println("\n\nCar 1");
         System.out.println("Car 1 fuel level: " + car1.getFuelLevel() + " litres");
-        System.out.println("Car 1 fuel economy: " + car1.getLPK() + " km per 100l");
-        System.out.println("Car 1 distance to empty: " + car1.getDistance() + " kilometers");
+        System.out.println("Car 1 fuel economy: " + car1.getLPK() + " l per 100km");
+        System.out.println("Car 1 distance to empty: " + df1.format(car1.getDistance()) + " kilometers");
 
         car1.drive(100);		// drive 100km in car 1
 
         System.out.println("\n\nCar 1 after driving 100km");
         System.out.println("Car 1 fuel level: " + (car1.getFuelLevel()) + " litres");
-        System.out.println("Car 1 distance to empty: " + (car1.getDistance()) + " kilometers");
+        System.out.println("Car 1 distance to empty: " + df1.format(car1.getDistance()) + " kilometers");
 
 
 
