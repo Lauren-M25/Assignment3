@@ -25,7 +25,7 @@ public class CS30SA3FuelEconomyClient {  // begin class
 
         String strin;		// string data input from keyboard
         String strout;		// processed info string to be output
-        String bannerOut;		// string to print banner to message dialogs
+        String aInfo = "A3 Q1";           // assignment info
 
         String prompt;		// prompt for use in input dialogs
 
@@ -47,16 +47,14 @@ public class CS30SA3FuelEconomyClient {  // begin class
     // the ProgramInfo class has both a default and initialized constructor
     // so you can choose which model you want to employ
     
-        //ProgramInfo programInfo = new ProgramInfo();
-        //ProgramInfo programInfo = new ProgramInfo("assignment name");
+        ProgramInfo programInfo = new ProgramInfo(aInfo);
         
         //BufferedReader fin = new BufferedReader(new FileReader("demo1Data.txt"));
-        //PrintWriter fout = new PrintWriter(new BufferedWriter(new FileWriter("outFile.txt")));
+        PrintWriter fout = new PrintWriter(new BufferedWriter(new FileWriter("outFile.txt")));
     	
     // ********** Print output Banner **********
 
-// use your program info class from exercise 2.1 to print banners to the console
-// window and to the output file.
+        programInfo.printBanner();
 	    	
     // ************************ get input **********************
 
@@ -93,7 +91,7 @@ public class CS30SA3FuelEconomyClient {  // begin class
     
     // ******** closing message *********
         
-// use your ProgramInfo class to print the closing messages
+        programInfo.printClosing();
 
     // ***** close streams *****
         
