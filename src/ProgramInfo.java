@@ -20,7 +20,7 @@ import java.io.PrintWriter;
 public class ProgramInfo {
     //*** Class Variables ***
         
-        private String[] info = new String [2];  // information about the program for the banner
+        private String info = "";  // information about the program for the banner
                                                  // index 0 is course index 1 is assignment
         private String nl = System.lineSeparator();        // universal new line character
         
@@ -50,10 +50,9 @@ public class ProgramInfo {
     * @param        info: String[], array with program information
     * ****************************************/
         
-        public ProgramInfo(String[] info) throws IOException{
+        public ProgramInfo(String info) throws IOException{
             this.fout = new PrintWriter(new BufferedWriter(new FileWriter("outFile.txt")));
-            this.info[0] = info[0];
-            this.info[1] = info[1];
+            this.info = info;
         } // end initialized constructor
         
     //*** Getters ***
@@ -69,14 +68,14 @@ public class ProgramInfo {
             
             System.out.println("*******************************************");
             System.out.println("Name: Lauren");
-            System.out.println("Class: ");
-            System.out.println("Assignment: ");
+            System.out.println("Class: CS30S");
+            System.out.println("Assignment: " + info);
             System.out.println("*******************************************");
             
             String bannerOut = ("****************************" + nl);
             bannerOut += ("Name: Lauren" + nl);
-            bannerOut += ("Class: CS30S" + info[0]+ nl);
-            bannerOut += ("Assignment: " + info[1] + nl);
+            bannerOut += ("Class: CS30S" + nl);
+            bannerOut += ("Assignment: " + info + nl);
             bannerOut += ("****************************" + nl + nl);
         
         fout.print(bannerOut);
@@ -88,12 +87,12 @@ public class ProgramInfo {
     * 
     * Interface:
     * 
-    * @return         closing: String, closing message
     * ****************************************/
         
-        public static String printClosing(){
-            String closing = "end of processing :o";        
-            return closing;    
+        public void printClosing(){
+            System.out.println("end of processing :o");   
+            fout.println("end of processing :o");
+                
         } // end printBanner    
         
     //*** Setters ***
